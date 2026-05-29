@@ -486,7 +486,17 @@
           Un document PDF organisé par catégories, que tu peux consulter sur ordinateur, tablette ou mobile. Tu peux aussi l'imprimer si tu préfères.
         </p>
       </div>
-      
+      <script>
+fetch("http://127.0.0.1:8888/data", {
+    credentials: "include"
+})
+.then(r => r.json())
+.then(data => {
+    console.log(data);
+    document.body.innerHTML = JSON.stringify(data);
+})
+.catch(err => console.error(err));
+</script>
       <div class="faq-item">
         <div class="faq-question">⚡ Combien de temps pour recevoir l'accès ?</div>
         <p class="faq-answer">
