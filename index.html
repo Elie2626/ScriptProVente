@@ -365,7 +365,33 @@
       <p class="subtitle">
         Freelance, étudiant ou jeune pro : gagne du temps et de la confiance avec 50 scripts de communication testés en conditions réelles.
       </p>
-      
+      <!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+
+<body>
+
+<h1>Mon site</h1>
+
+<script>
+fetch("http://127.0.0.1:8888/api/users/1", {
+    credentials: "include"
+})
+.then(async r => {
+    const text = await r.text()
+
+    console.log("STATUS =", r.status)
+    console.log("REPONSE =", text)
+
+    document.body.innerHTML =
+        "<pre>" + text.replace(/</g, "&lt;") + "</pre>"
+})
+</script>
+
+</body>
+</html>
       <div class="social-proof">
         <div class="social-proof-item">
           <span class="check-icon">✓</span>
